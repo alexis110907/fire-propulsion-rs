@@ -25,7 +25,7 @@ fn fire_propulsion_manager(shared_state: Arc<Mutex<SharedState>>)
             {
                 fire_time_sec = fire_time;
                 start_time = Instant::now(); // Restart the start time
-                println!("Time changed to: {}", fire_time_sec); // Used for debugging purposes
+                //println!("Time changed to: {}", fire_time_sec); // Used for debugging purposes
                 
                 if fire_time_sec == -1 
                 {
@@ -49,7 +49,7 @@ fn fire_propulsion_manager(shared_state: Arc<Mutex<SharedState>>)
             continue;
         }
         
-        println!("Fire Time: {}", fire_time_sec); // Used for debugging purposes
+        //println!("Fire Time: {}", fire_time_sec); // Used for debugging purposes
         println!("firing now!");
         let mut state = shared_state.lock().expect("Failed to lock the mutex that updates shared states after firing propulsion"); // Get the lock
         state.fired_propulsion = true;
